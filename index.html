@@ -726,7 +726,24 @@
 								
 							</div>
 						</div>
-				
+
+
+						<script>
+							const form = document.querySelector('form');
+
+							form.addEventListener('submit', (event) => {
+								event.preventDefault();
+
+								const name = form.querySelector('input[name="Name"]').value;
+								const email = form.querySelector('input[name="Email"]').value;
+								const subject = form.querySelector('input[name="Subject"]').value;
+								const message = form.querySelector('textarea[name="Message"]').value;
+
+								const body = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
+
+								window.location.href = `mailto:loiwai700@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+							});
+						</script>
 
 
 					</div>
