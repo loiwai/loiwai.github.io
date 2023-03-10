@@ -1,6 +1,7 @@
 // Select the form and the submit button
-const form = document.querySelector('form');
 const submitButton = document.querySelector('.btn-send-message');
+const form = document.querySelector('#contact-form');
+
 
 // Listen for the form submission
 form.addEventListener('submit', (event) => {
@@ -16,10 +17,8 @@ form.addEventListener('submit', (event) => {
     const body = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
 
     // Create a mailto URL with the email subject and body
-    const mailtoUrl = `mailto:loiwai700@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
     // Set the form action to the mailto URL
-    form.action = mailtoUrl;
+    form.action = `mailto:loiwai700@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     // Submit the form
     form.submit();
